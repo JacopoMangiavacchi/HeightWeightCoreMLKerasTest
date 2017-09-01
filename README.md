@@ -1,7 +1,7 @@
-# HeightWidthCoreMLKerasTest
+# HeightWeightCoreMLKerasTest
 This is a super simple end to end test of Keras, TensorFlow and CoreML.
 
-It create an incredible simple linear regression model from some height/width statistics and export the model to CoreML in order to use it as a function inside a sample iOS App.  Of course no real reason to use ML in a scenario like this.  Just a simple test with documented step by step instructions.
+It create an incredible simple linear regression model from some height/weight statistics and export the model to CoreML in order to use it as a function inside a sample iOS App.  Of course no real reason to use ML in a scenario like this.  Just a simple test with documented step by step instructions.
 
 **WORK IN PROGRESS**
 
@@ -13,7 +13,7 @@ Step by step instruction to create a very simple ML model using Keras/TensorFlow
 
 
 # Clone this repository on your local computer
-    git clone https://github.com/JacopoMangiavacchi/HeightWidthCoreMLKerasTest.git
+    git clone https://github.com/JacopoMangiavacchi/HeightWeightCoreMLKerasTest.git
 
 
 # Create the Keras, TensorFlow, Python, CoreML environment
