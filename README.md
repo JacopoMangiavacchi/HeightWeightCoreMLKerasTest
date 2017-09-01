@@ -8,7 +8,7 @@ It create an incredible simple linear regression model from some height/weight s
 Step by step instruction to create a very simple ML model using Keras/TensorFlow, import it on CoreML using CoreMLConversionTool and using it locally on a simple iOS App
 
 
-# Download and Install Anaconda Python 3.6
+# Download and Install Anaconda Python
     https://www.continuum.io/downloads
 
 
