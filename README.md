@@ -3,7 +3,7 @@ This is a super simple end to end test of Keras, TensorFlow and CoreML.
 
 It create an incredible simple linear regression model from some height/width statistics and export the model to CoreML in order to use it as a function inside a sample iOS App.  Of course no real reason to use ML in a scenario like this.  Just a simple test with documented step by step instructions.
 
-** WORK IN PROGRESS **
+**WORK IN PROGRESS**
 
 Step by step instruction to create a very simple ML model using Keras/TensorFlow, import it on CoreML using CoreMLConversionTool and using it locally on a simple iOS App
 
@@ -72,7 +72,7 @@ Execute any cells in order to create, save and export the Keras Model using Core
 The CoreML Model will be saved in the current folder as HeightWidth_model.mlmodel
 
 
-** TODO **
+**TODO**
 
 
 
