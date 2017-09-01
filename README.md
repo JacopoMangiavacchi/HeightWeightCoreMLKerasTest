@@ -69,7 +69,7 @@ Open createModel.ipynb in your Jupyter browsing session
 Execute any cells in order to create, save and export the Keras Model using CoreML Exporting Tools
 
 
-The CoreML Model will be saved in the current folder as HeightWidth_model.mlmodel
+The CoreML Model will be saved in the current folder as HeightWeight_model.mlmodel
 
 
 **TODO**
