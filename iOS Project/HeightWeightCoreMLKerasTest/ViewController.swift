@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreML
 
 class ViewController: UIViewController {
 
@@ -33,9 +34,23 @@ class ViewController: UIViewController {
             let model = HeightWeight_model()
             
             do {
-                let expectedWeight = try model.prediction(input: [inchesInput])
+                let mlMultiArrayInput = try? MLMultiArray(shape:[1,1], dataType:MLMultiArrayDataType.double)
+                mlMultiArrayInput![0] = NSNumber(floatLiteral: inchesInput)
                 
-                resultLabel.text = "Your expected Height should be \(inchesInput) Pounds"
+                let heightWeight_modelOutput = try model.prediction(input: HeightWeight_modelInput(height: mlMultiArrayInput!))
+                
+                var expectedWeigth = heightWeight_modelOutput.weight[0].doubleValue
+                
+                var resultString = ""
+                if unitControl.selectedSegmentIndex == 1 {
+                    expectedWeigth *= 0.453592
+                    resultString = "\(expectedWeigth) Kilos"
+                }
+                else {
+                    resultString = "\(expectedWeigth) Pounds"
+                }
+                
+                resultLabel.text = "Your expected Height should be \(resultString)"
                 resultLabel.isHidden = false
             }
             catch let error {
