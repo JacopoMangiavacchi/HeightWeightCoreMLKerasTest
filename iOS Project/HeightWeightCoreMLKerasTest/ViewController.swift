@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             let model = HeightWeight_model()
             
             do {
-                let mlMultiArrayInput = try? MLMultiArray(shape:[1,1], dataType:MLMultiArrayDataType.double)
+                let mlMultiArrayInput = try? MLMultiArray(shape:[1], dataType:MLMultiArrayDataType.double)
                 mlMultiArrayInput![0] = NSNumber(floatLiteral: inchesInput)
                 
                 let heightWeight_modelOutput = try model.prediction(input: HeightWeight_modelInput(height: mlMultiArrayInput!))
