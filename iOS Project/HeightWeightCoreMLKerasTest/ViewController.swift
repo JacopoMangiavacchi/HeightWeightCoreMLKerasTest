@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreML
 
 class ViewController: UIViewController {
 
@@ -26,36 +25,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateHeight(_ sender: Any) {
-        if var inchesInput = Double(inputText.text!) {
+        if let input = Float(inputText.text!) {
+            let modelWrapper = HeightWeightModelWrapper()
+
+            var resultString = ""
             if unitControl.selectedSegmentIndex == 1 {
-                inchesInput *= 0.393701
+                let result = modelWrapper.predictHeight(cm: input)
+                resultString = "\(result) Kilos"
             }
-            
-            let model = HeightWeight_model()
-            
-            do {
-                let mlMultiArrayInput = try? MLMultiArray(shape:[1], dataType:MLMultiArrayDataType.double)
-                mlMultiArrayInput![0] = NSNumber(floatLiteral: inchesInput)
-                
-                let heightWeight_modelOutput = try model.prediction(input: HeightWeight_modelInput(height: mlMultiArrayInput!))
-                
-                var expectedWeigth = heightWeight_modelOutput.weight[0].doubleValue
-                
-                var resultString = ""
-                if unitControl.selectedSegmentIndex == 1 {
-                    expectedWeigth *= 0.453592
-                    resultString = "\(expectedWeigth) Kilos"
-                }
-                else {
-                    resultString = "\(expectedWeigth) Pounds"
-                }
-                
-                resultLabel.text = "Your expected Height should be \(resultString)"
-                resultLabel.isHidden = false
+            else {
+                let result = modelWrapper.predictHeight(inches: input)
+                resultString = "\(result) Pounds"
             }
-            catch let error {
-                print(error)
-            }
+
+            resultLabel.text = "Your expected Height should be \(resultString)"
+            resultLabel.isHidden = false
         }
     }
     
