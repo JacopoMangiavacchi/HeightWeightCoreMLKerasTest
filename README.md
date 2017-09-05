@@ -40,7 +40,7 @@ This environment is created based on the environment.yml file for iinstalling Py
         - h5py==2.7.0
         - pip:
             - tensorflow==1.1.0
-            - keras==2.0.4
+            - keras==2.0.6
             - coremltools==0.6.3
 
 
