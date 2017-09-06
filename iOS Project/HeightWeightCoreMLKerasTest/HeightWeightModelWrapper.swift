@@ -10,6 +10,9 @@ import Foundation
 import CoreML
 
 class HeightWeightModelWrapper {
+    
+    let cmToInch = Float(0.393701)
+    let poundToKilo = Float(0.453592)
     let model = HeightWeight_model()
     
     init() {
@@ -32,6 +35,6 @@ class HeightWeightModelWrapper {
     }
 
     func predictHeight(cm: Float) -> Float {
-        return predictHeight(inches: cm * 0.393701) * 0.453592
+        return predictHeight(inches: cm * cmToInch) * poundToKilo
     }
 }
