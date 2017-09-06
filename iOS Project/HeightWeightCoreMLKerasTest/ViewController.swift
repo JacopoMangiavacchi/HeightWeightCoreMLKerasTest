@@ -38,7 +38,7 @@ class ViewController: UIViewController {
                 resultString = "\(result) Pounds"
             }
 
-            resultLabel.text = "Your expected Height should be \(resultString)"
+            resultLabel.text = "Your expected Weight should be \(resultString)"
             resultLabel.isHidden = false
         }
     }
