@@ -3,6 +3,8 @@ This is a super simple end to end test of Keras, TensorFlow and CoreML.
 
 It create an incredible simple linear regression model from some height/weight statistics and export the model to CoreML in order to use it as a function inside a sample iOS App.  Of course no real reason to use ML in a scenario like this.  Just a simple test with documented step by step instructions.
 
+https://medium.com/@JMangia/super-simple-end-to-end-test-of-keras-tensorflow-and-coreml-f247ab73fb42
+
 
 Step by step instruction to create a very simple ML model using Keras/TensorFlow, import it on CoreML using CoreMLConversionTool and using it locally on a simple iOS App
 
