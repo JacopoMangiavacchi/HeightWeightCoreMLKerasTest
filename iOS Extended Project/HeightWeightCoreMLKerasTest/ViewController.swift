@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var unitControl: UISegmentedControl!
+    @IBOutlet weak var sexControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +25,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    internal func getSex() -> HeightWeightModelWrapper.Sex {
+        return sexControl.selectedSegmentIndex == 0 ? .Male : .Female
+    }
+    
     @IBAction func calculateHeight(_ sender: Any) {
         if let input = Float(inputText.text!) {
             let modelWrapper = HeightWeightModelWrapper()
 
             var resultString = ""
             if unitControl.selectedSegmentIndex == 1 {
-                let result = modelWrapper.predictHeight(cm: input)
+                let result = modelWrapper.predictHeight(cm: input, sex: getSex())
                 resultString = "\(result) Kilos"
             }
             else {
-                let result = modelWrapper.predictHeight(inches: input)
+                let result = modelWrapper.predictHeight(inches: input, sex: getSex())
                 resultString = "\(result) Pounds"
             }
 

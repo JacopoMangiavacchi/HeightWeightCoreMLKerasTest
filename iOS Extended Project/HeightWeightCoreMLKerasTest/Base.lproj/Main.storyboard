@@ -165,6 +165,7 @@
                     <connections>
                         <outlet property="inputText" destination="FA3-Pg-jv7" id="lnT-Bf-z9l"/>
                         <outlet property="resultLabel" destination="BjK-YS-nf7" id="CNk-7Z-qXM"/>
+                        <outlet property="sexControl" destination="kLc-dD-1iv" id="vTl-v6-JrB"/>
                         <outlet property="unitControl" destination="Kjp-Ws-sZb" id="zKf-tD-HsY"/>
                     </connections>
                 </viewController>
