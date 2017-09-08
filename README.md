@@ -94,6 +94,16 @@ Execute any cells in order to create, save and export the Keras Model using Core
 The Extended CoreML Model will be saved in the current folder as HeightWeightExtended_model.mlmodel
 
 
+# Build the iOS Extended sample project
+Open the iOS Extended sample project HeightWeightCoreMLKerasTest.xcodeproj in XCode 9 and Build and Test the App on your iPhone or Simulator
+
+The iOS sample project extend the Swift wrapper class (HeightWeightModelWrapper.swift) to incupsulate all CoreML API and simplify the usage of CoreML Multi Array and implement some utility like convert from Centimeters to Inches and Pounds to Kilos.
+
+Using this simple model from Swift to predict Height from a given Weight is as simple as executing this two line of code!
+
+    let modelWrapper = HeightWeightModelWrapper()
+    let resultInKilos = modelWrapper.predictHeight(cm: input, sex: .Female)
+
 # Delete the Environment
 Free your storage cleaning the Python, Keras, TensorFlow, CoreMLTools environment:
     source deactivate
