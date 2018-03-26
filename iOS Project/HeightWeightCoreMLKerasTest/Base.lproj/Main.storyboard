@@ -41,6 +41,9 @@
                                             <segment title="Cm."/>
                                         </segments>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="calculateHeight:" destination="BYZ-38-t0r" eventType="valueChanged" id="Y8Q-Dn-IYU"/>
+                                        </connections>
                                     </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FA3-Pg-jv7">
                                         <rect key="frame" x="72.333333333333329" y="10" width="96.999999999999986" height="30"/>
@@ -84,6 +87,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BjK-YS-nf7" firstAttribute="top" secondItem="GEI-fb-tn1" secondAttribute="bottom" constant="26" id="20W-uS-NKu"/>
                             <constraint firstItem="rsv-vm-4Q4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Dx-1G-LW2"/>
@@ -97,14 +101,35 @@
                             <constraint firstItem="GEI-fb-tn1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pSB-RQ-olc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XsM-Gz-Pqb" appends="YES" id="GO2-xc-veT"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="inputText" destination="FA3-Pg-jv7" id="lnT-Bf-z9l"/>
                         <outlet property="resultLabel" destination="BjK-YS-nf7" id="CNk-7Z-qXM"/>
+                        <outlet property="toolbar" destination="VQK-8y-DWh" id="8dK-FY-4W8"/>
                         <outlet property="unitControl" destination="Kjp-Ws-sZb" id="zKf-tD-HsY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VQK-8y-DWh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="flexibleSpace" id="J7L-Jr-NoH"/>
+                        <barButtonItem title="Done" id="XdX-zD-YZE">
+                            <connections>
+                                <action selector="calculateHeight:" destination="BYZ-38-t0r" id="BAC-Ri-lSJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <tapGestureRecognizer id="XsM-Gz-Pqb">
+                    <connections>
+                        <action selector="calculateHeight:" destination="BYZ-38-t0r" id="Jzf-4S-Ixe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
