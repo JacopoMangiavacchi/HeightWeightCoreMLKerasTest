@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var unitControl: UISegmentedControl!
+    @IBOutlet weak var toolbar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        inputText.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculateHeight(_ sender: Any) {
+        view.endEditing(true)
         if let input = Float(inputText.text!) {
             let modelWrapper = HeightWeightModelWrapper()
 
